@@ -8,7 +8,7 @@ import Browse from './components/Browse';
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#F2F0F1]">
+    <main className="min-h-screen bg-[#ffffff]">
    <Hero />
    <NewArrivals />
    <TopSelling />

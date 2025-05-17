@@ -33,59 +33,65 @@ const newArrivals = [
 
 function NewArrivals() {
   return (
-    <section className="py-12 px-4 border-b border-[rgba(0,0,0,0.1)] m-10">
-  <h2 className="text-3xl font-bold text-center mb-8">
-    <span className="inline-block pb-1">NEW ARRIVALS</span>
-  </h2>
+    <section className="py-12 border-b border-[rgba(0,0,0,0.1)] m-10">
+      <h2 className="text-3xl font-bold text-center mb-8">
+        <span className="inline-block pb-1"
+        style={{ fontFamily: 'var(--font-integral-cf)' }}>NEW ARRIVALS</span>
+      </h2>
 
-  <div className="flex justify-center gap-6 flex-wrap md:flex-nowrap">
-    {newArrivals.map((item, i) => (
-      <div
-        key={i}
-        className="bg-[#f9f7f6] rounded-xl p-4 md:p-6 w-[16rem] md:w-[18rem] text-center shadow-md"
-      >
-        <div className="relative h-60 md:h-72 mb-4">
-          <Image
-            src={item.image}
-            alt={item.name}
-            fill
-            className="object-contain"
-          />
-        </div>
-        <p className="font-medium text-gray-800 mb-2">{item.name}</p>
-        <div className="flex justify-center items-center gap-1 text-yellow-500 text-sm">
-          {"★".repeat(Math.floor(item.rating))}
-          {"☆".repeat(5 - Math.floor(item.rating))}
-          <span className="text-gray-600 text-sm ml-1">{item.rating}/5</span>
-        </div>
-        <div className="mt-2 text-lg font-semibold">
-          ${item.price}
-          {item.originalPrice && (
-            <>
-              <span className="text-gray-400 line-through text-sm ml-2">
-                ${item.originalPrice}
+      <div className="flex justify-center gap-4 md:gap-6">
+        {newArrivals.map((item, i) => (
+          <div
+            key={i}
+            className={`
+              bg-[#ffffff] rounded-xl p-0
+              w-[140px] sm:w-[160px] md:w-[200px] lg:w-[280px] 
+              ${i >= 2 ? 'hidden sm:block' : ''}  /* Show only 2 cards on mobile */
+              ${i >= 3 ? 'sm:hidden md:block' : ''} /* Show 3 cards on sm */
+              text-left
+            `}
+          >
+            <div className="relative w-full h-40 sm:h-48 md:h-56 lg:h-64 mb-2 md:mb-4">
+              <Image
+                src={item.image}
+                alt={item.name}
+                fill
+                className="object-cover w-full h-full rounded-xl"
+              />
+            </div>
+            <p className="font-medium text-gray-800 mb-1 md:mb-2 text-sm md:text-base truncate">
+              {item.name}
+            </p>
+            <div className="flex items-center gap-1 text-yellow-500 text-xs md:text-sm">
+              {"★".repeat(Math.floor(item.rating))}
+              {"☆".repeat(5 - Math.floor(item.rating))}
+              <span className="text-gray-600 text-xs md:text-sm ml-1">
+                {item.rating}/5
               </span>
-              <span className="text-red-500 text-sm ml-2">
-                -{item.discount}
-              </span>
-            </>
-          )}
-        </div>
+            </div>
+            <div className="mt-1 md:mt-2 text-base md:text-lg font-semibold">
+              ${item.price}
+              {item.originalPrice && (
+                <>
+                  <span className="text-gray-400 line-through text-xs md:text-sm ml-1 md:ml-2">
+                    ${item.originalPrice}
+                  </span>
+                  <span className="text-red-500 text-xs md:text-sm ml-1 md:ml-2">
+                    -{item.discount}
+                  </span>
+                </>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
-    ))}
-  </div>
 
-  <div className="flex justify-center mt-12">
-    <button className="border border-gray-300 px-6 py-2 rounded-full hover:bg-gray-100 transition">
-      View All
-    </button>
-  </div>
-</section>
-
-
-
-
-  )
+      <div className="flex justify-center mt-8 md:mt-12">
+        <button className="border border-gray-300 px-4 md:px-6 py-2 rounded-full hover:bg-gray-100 transition text-sm md:text-base">
+          View All
+        </button>
+      </div>
+    </section>
+  );
 }
-
 export default NewArrivals
