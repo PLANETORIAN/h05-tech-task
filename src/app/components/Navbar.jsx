@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function Navbar() {
   return (
     <div className="w-full">
-      {/* Top Banner */}
+     
       
 <div className="relative bg-black text-white text-xs md:text-sm px-4 py-2 text-center font-satoshi">
   <button className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2">
@@ -25,15 +25,13 @@ export default function Navbar() {
 
 
 
-      {/* Navbar */}
+     
       <div className="w-full bg-white shadow-sm">
         <nav className="flex items-center justify-between px-4 md:px-6 py-3 gap-6 w-full">
-          {/* Hamburger Placeholder (visible on mobile) */}
-         {/* Hamburger Placeholder (visible on mobile) */}
-{/* Hamburger Placeholder (visible on mobile) */}
+          
 
 <div className="flex items-center gap-4">
-    {/* Hamburger Menu */}
+  
     <div className="md:hidden relative w-6 h-6 flex-shrink-0">
       <Image
         src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747470477/Hamburger_uhxcxo.svg"
@@ -46,13 +44,12 @@ export default function Navbar() {
     </div>
   
 </div>
-{/* Logo */}
+
 <div className="text-2xl font-[700] flex-shrink-0 font-integral"
   style={{ fontFamily: 'var(--font-integral-cf)' }}>
   SHOP.CO
 </div>
 
-{/* Navigation Links - Updated to use Satoshi */}
 <div className="hidden md:flex gap-6 text-sm font-medium items-center font-satoshi">
   <span className="flex items-center gap-1 cursor-pointer">
     Shop
@@ -71,7 +68,7 @@ export default function Navbar() {
   <span className="cursor-pointer">Brands</span>
 </div>
 
-{/* Search Bar - Updated to use Satoshi */}
+
 <div className="hidden md:flex-grow md:block md:max-w-xl relative mr-0">
   <div className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4">
     <Image
@@ -90,11 +87,9 @@ export default function Navbar() {
 </div>
 
 
-{/* Cart & Profile Icons */}
-{/* Cart & Profile Icons */}
-{/* Cart & Profile Icons */}
+
 <div className="flex gap-4 items-center  md:pr-10 flex-shrink-0">
-  {/* Search Icon (visible only on mobile) */}
+
   <div className="block md:hidden relative w-6 h-6 flex-shrink-0">
     <Image
       src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747470810/Search_small_yqgbe2.svg"
@@ -106,7 +101,7 @@ export default function Navbar() {
     />
   </div>
 
-  {/* Cart Icon */}
+
   <div className="relative w-6 h-6 flex-shrink-0">
     <Image
       src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747384892/Cart_po01hj.svg"
@@ -118,7 +113,7 @@ export default function Navbar() {
     />
   </div>
 
-  {/* Profile Icon */}
+
   <div className="relative w-6 h-6 flex-shrink-0">
     <Image
       src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747384892/Profile_joi4oh.svg"
@@ -130,7 +125,7 @@ export default function Navbar() {
     />
   </div>
 </div>
-  {/* ...rest of the icons... */}
+ 
         </nav>
       </div>
     </div>

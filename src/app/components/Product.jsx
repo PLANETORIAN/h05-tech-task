@@ -2,7 +2,8 @@ import Image from "next/image"
 
 function Product() {
   return (
-    <div><div className="flex items-center gap-2 text-sm text-gray-500 mb-8">
+    <div className="font-satoshi">
+      <div className="flex items-center gap-2 text-sm text-gray-500 mb-8">
             <span>Home</span>
             <span>/</span>
             <span>Shop</span>
@@ -14,11 +15,12 @@ function Product() {
     
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Left Column - Images */}
-            <div className="flex gap-4">
-              <div className="flex flex-col gap-4">
+        
+            <div className="flex flex-col-reverse md:flex-row gap-4">
                 {/* Thumbnail Images */}
-                <div className="w-20 h-20 border rounded-lg overflow-hidden">
-                  <Image
+                <div className="flex md:flex-col gap-4 overflow-x-auto md:overflow-visible">
+    <div className="w-20 h-20 flex-shrink-0 border rounded-lg overflow-hidden">
+      <Image
                     src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747508475/Product_main_kptfuh.png"
                     alt="T-shirt view 1"
                     width={80}
@@ -45,30 +47,64 @@ function Product() {
                   />
                 </div>
               </div>
+              
     
-              {/* Main Image */}
+             
               <div className="flex-1 aspect-square relative rounded-lg overflow-hidden bg-gray-100">
-                <Image
-                  src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747508475/Product_main_kptfuh.png"
-                  alt="One Life Graphic T-shirt"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+    <Image
+      src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747508475/Product_main_kptfuh.png"
+      alt="One Life Graphic T-shirt"
+      fill
+      className="object-cover"
+    />
+  </div>
             </div>
     
-            {/* Right Column - Product Details */}
+           
             <div className="flex flex-col gap-6">
-              <h1 className="text-3xl font-bold">ONE LIFE GRAPHIC T-SHIRT</h1>
-              
-              {/* Rating */}
-              <div className="flex items-center gap-2">
-                <div className="flex text-yellow-400">
-                  {"★".repeat(4)}{"★".repeat(1)}
-                </div>
-                <span className="text-gray-600">4.5/5</span>
-              </div>
-    
+            <h1 className="text-3xl font-[700]" style={{ fontFamily: 'var(--font-integral-cf)' }}>
+    ONE LIFE GRAPHIC TSHIRT
+  </h1>
+            
+<div className="flex items-center gap-2">
+  <div className="flex gap-1">
+    {[...Array(5)].map((_, index) => {
+      const starValue = index + 1;
+      if (starValue <= Math.floor(4.5)) {
+        return (
+          <Image
+            key={index}
+            src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747512289/Star_review_zxf9fb.svg"
+            alt="full star"
+            width={16}
+            height={16}
+          />
+        );
+      } else if (starValue - 0.5 === 4.5) {
+        return (
+          <Image
+            key={index}
+            src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747512289/Half_star_review_ktmtyn.svg"
+            alt="half star"
+            width={8}
+            height={8}
+          />
+        );
+      }
+      return (
+        <Image
+          key={index}
+          src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747512289/Star_review_zxf9fb.svg"
+          alt="empty star"
+          width={16}
+          height={16}
+          className="opacity-30"
+        />
+      );
+    })}
+  </div>
+  <span className="text-gray-600">4.5/5</span>
+</div>
               {/* Price */}
               <div className="flex items-center gap-4">
                 <span className="text-2xl font-bold">₹180</span>

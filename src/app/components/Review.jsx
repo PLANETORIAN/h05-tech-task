@@ -2,36 +2,47 @@ import Image from "next/image"
 
 function Review() {
   return (
-    <div><div className="mt-16">
-    <div className="flex justify-between items-center mb-8">
-      <div className="flex gap-8">
-        <button className="text-gray-400">Product Details</button>
-        <button className="font-medium border-b-2 border-black">Rating & Reviews</button>
-        <button className="text-gray-400">FAQs</button>
-      </div>
-      
-<div className="flex gap-4">
-<button className="p-2 border rounded-full">
-<Image 
-  src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747511246/Sort_ru4nqd.svg"
-  alt="Sort"
-  width={24}
-  height={24}
-/>
-</button>
-<select className="border rounded-full px-4 py-2 bg-white">
-<option>Latest</option>
-<option>Oldest</option>
-<option>Highest Rating</option>
-<option>Lowest Rating</option>
-</select>
-<button className="px-4 py-2 bg-black text-white rounded-full">Write a Review</button>
-</div>
-
+    <div className="font-satoshi">
+      <div className="mt-16 px-4 sm:px-6 lg:px-12">
+  
+  <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-8 mb-8">
+    
+    
+    <div className="flex gap-6 w-full md:w-auto justify-start">
+      <button className="text-gray-400">Product Details</button>
+      <button className="font-medium border-b-2 border-black">Rating & Reviews</button>
+      <button className="text-gray-400">FAQs</button>
     </div>
 
-    {/* Reviews List */}
-<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    
+    <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+      <div className="flex gap-2 items-center">
+        <button className="p-2 border rounded-full">
+          <Image 
+            src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747511246/Sort_ru4nqd.svg"
+            alt="Sort"
+            width={24}
+            height={24}
+          />
+        </button>
+        <select className="border rounded-full px-4 py-2 bg-white">
+          <option>Latest</option>
+          <option>Oldest</option>
+          <option>Highest Rating</option>
+          <option>Lowest Rating</option>
+        </select>
+      </div>
+      <button className="px-4 py-2 bg-black text-white rounded-full w-full sm:w-auto">
+        Write a Review
+      </button>
+    </div>
+  </div>
+
+
+    
+
+    
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 {[
 {
   name: "Samantha D.",
@@ -80,19 +91,55 @@ function Review() {
 
   <div className="flex justify-between items-start">
     <div>
+    <div className="flex items-center gap-2">
+  <div className="flex gap-1">
+    {[...Array(5)].map((_, index) => {
+      const starValue = index + 1;
+      if (starValue <= Math.floor(review.rating)) {
+        return (
+          <Image
+            key={index}
+            src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747512289/Star_review_zxf9fb.svg"
+            alt="full star"
+            width={16}
+            height={16}
+          />
+        );
+      } else if (starValue - 0.5 === review.rating) {
+        return (
+          <Image
+            key={index}
+            src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747512289/Half_star_review_ktmtyn.svg"
+            alt="half star"
+            width={8}
+            height={8}
+          />
+        );
+      }
+      
+    })}
+  </div>
+</div>
       <div className="flex items-center gap-2">
         <span className="font-semibold">{review.name}</span>
         {review.verified && (
-          <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
-            <path d="M13.3334 4L6.00008 11.3333L2.66675 8" stroke="green" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+          <div className="flex items-center gap-2">
+          <span className="font-semibold">{review.name}</span>
+          {review.verified && (
+            <Image 
+              src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747515030/Verified_ku5ljv.svg"
+              alt="Verified"
+              width={16}
+              height={16}
+              className="ml-2"
+            />
+          )}
+        </div>
         )}
       </div>
-      <div className="flex items-center text-yellow-400 mt-1">
-        {"★".repeat(Math.floor(review.rating))}
-        {review.rating % 1 !== 0 && <span>½</span>}
-        {"☆".repeat(5 - Math.ceil(review.rating))}
-      </div>
+      
+
+
     </div>
     <button className="text-gray-400 hover:bg-gray-100 p-1 rounded-full">•••</button>
   </div>
@@ -103,15 +150,11 @@ function Review() {
 </div>
 
 
-
-
-
-
 <div className="flex justify-center">
-<button className="mt-8 px-10 py-2 border border-black/10 rounded-full text-gray-600 hover:bg-gray-50">
-Load More Reviews
-</button>
-</div>
+          <button className="mt-8 px-10 py-2 border border-black/10 rounded-full text-gray-600 hover:bg-gray-50">
+            Load More Reviews
+          </button>
+        </div>
 
 
 

@@ -24,16 +24,23 @@ const testimonials = [
 export default function Feedback() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-16 relative">
-      <h2 className="text-3xl md:text-4xl font-bold mb-10">OUR HAPPY CUSTOMERS</h2>
+      <h2 className="text-3xl md:text-4xl font-[800] mb-10"
+          style={{ fontFamily: 'var(--font-integral-cf)' }}>
+        OUR HAPPY CUSTOMERS
+      </h2>
 
-      {/* Testimonials in grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="flex justify-start gap-4 md:gap-6">
         {testimonials.map((t, i) => (
-          // ...existing code...
-<div
-  key={i}
-  className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm"
->
+          <div
+            key={i}
+            className={`
+              bg-white border border-gray-200 p-6 rounded-xl shadow-sm
+              w-[280px] sm:w-[340px] md:w-[360px]
+              ${i >= 2 ? 'hidden sm:block' : ''}  /* Show only 2 cards on mobile */
+              ${i >= 3 ? 'sm:hidden md:block' : ''} /* Show 3 cards on sm */
+              font-satoshi
+            `}
+          >
   <div className="flex gap-1 mb-3">
     {[...Array(5)].map((_, index) => {
       const starValue = index + 1;
@@ -75,11 +82,11 @@ export default function Feedback() {
   </div>
   <p className="text-gray-600 text-sm">"{t.quote}"</p>
 </div>
-// ...existing code...
+
         ))}
       </div>
 
-      {/* Arrows (visual only) */}
+      
       <div className="absolute top-20 right-4 mt-2 flex items-center gap-2 z-10">
         <button className="p-2 rounded-full bg-white hover:bg-gray-200 transition relative w-8 h-8">
           <Image

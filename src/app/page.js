@@ -15,18 +15,6 @@ export default function HomePage() {
    <Browse />
    <Feedback />
       
-
-
-     
-
-    
-
-
-
-
-
-
-
     </main>
   );
 }

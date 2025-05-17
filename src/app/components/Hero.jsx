@@ -5,7 +5,7 @@ function Hero() {
     <div>
       <section className="relative flex flex-col bg-[#F2F0F1] md:flex-row items-center justify-between px-6 md:px-18 w-full mx-auto gap-8 overflow-hidden">
 
-        {/* Left Content */}
+        
         <div className="flex-1 text-center md:text-left relative z-10">
         
 
@@ -44,7 +44,6 @@ function Hero() {
   designed to bring out your individuality and cater to your sense of style.
 </p>
 
-{/* Button - updated to Satoshi */}
 <button
   className="
     bg-black
@@ -68,7 +67,6 @@ function Hero() {
   Shop Now
 </button>
 
-{/* Metrics - updated to Satoshi */}
 <div
   className="
     flex
@@ -117,7 +115,6 @@ function Hero() {
 
         </div>
 
-        {/* Right Image */}
         <div
   className="
     relative 
@@ -141,7 +138,7 @@ function Hero() {
     md:mx-0 md:mb-0
   "
 >
-  {/* Hero Image */}
+ 
   <Image
     src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747384896/Landing_page_ym3qgr.jpg"
     alt="Landing Page"
@@ -151,7 +148,7 @@ function Hero() {
     sizes="(max-width: 768px) 100vw, 525px"
   />
 
-  {/* Decorative Stars */}
+
   <Image
     src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747384892/Star_lk1fur.svg"
     alt="Star Decoration"
@@ -171,7 +168,7 @@ function Hero() {
 
       </section>
 
-      {/* Brand Logos */}
+   
       <div className="bg-black text-white py-6">
   <div className="flex flex-wrap justify-around items-center gap-8 text-base sm:text-lg font-semibold">
     {[
