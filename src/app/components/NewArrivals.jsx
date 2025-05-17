@@ -62,13 +62,38 @@ function NewArrivals() {
             <p className="font-medium text-gray-800 mb-1 md:mb-2 text-sm md:text-base truncate">
               {item.name}
             </p>
-            <div className="flex items-center gap-1 text-yellow-500 text-xs md:text-sm">
-              {"★".repeat(Math.floor(item.rating))}
-              {"☆".repeat(5 - Math.floor(item.rating))}
-              <span className="text-gray-600 text-xs md:text-sm ml-1">
-                {item.rating}/5
-              </span>
-            </div>
+            
+<div className="flex items-center gap-1 text-xs md:text-sm">
+  <div className="flex">
+    {[...Array(5)].map((_, index) => {
+      const starValue = index + 1;
+      if (starValue <= Math.floor(item.rating)) {
+        return (
+          <Image
+            key={index}
+            src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747512289/Star_review_zxf9fb.svg"
+            alt="full star"
+            width={16}
+            height={16}
+          />
+        );
+      } else if (starValue - 0.5 === item.rating) {
+        return (
+          <Image
+            key={index}
+            src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747512289/Half_star_review_ktmtyn.svg"
+            alt="half star"
+            width={8}
+            height={8}
+          />
+        );
+    }
+    })}
+  </div>
+  <span className="text-gray-600 ml-1">
+    {item.rating}/5
+  </span>
+</div>
             <div className="mt-1 md:mt-2 text-base md:text-lg font-semibold">
               ${item.price}
               {item.originalPrice && (

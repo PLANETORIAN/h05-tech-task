@@ -29,19 +29,53 @@ export default function Feedback() {
       {/* Testimonials in grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {testimonials.map((t, i) => (
-          <div
-            key={i}
-            className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm"
-          >
-            <div className="flex text-yellow-400 mb-3">
-              {"★".repeat(t.rating)}{"☆".repeat(5 - t.rating)}
-            </div>
-            <div className="flex items-center font-semibold mb-2">
-              {t.name}
-              <div className="w-4 h-4 bg-green-500 rounded-full ml-2"></div>
-            </div>
-            <p className="text-gray-600 text-sm">"{t.quote}"</p>
-          </div>
+          // ...existing code...
+<div
+  key={i}
+  className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm"
+>
+  <div className="flex gap-1 mb-3">
+    {[...Array(5)].map((_, index) => {
+      const starValue = index + 1;
+      if (starValue <= Math.floor(t.rating)) {
+        return (
+          <Image
+            key={index}
+            src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747512289/Star_review_zxf9fb.svg"
+            alt="full star"
+            width={16}
+            height={16}
+          />
+        );
+      } else {
+        return (
+          <Image
+            key={index}
+            src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747512289/Star_review_zxf9fb.svg"
+            alt="empty star"
+            width={16}
+            height={16}
+            className="opacity-30"
+          />
+        );
+      }
+    })}
+  </div>
+  
+    <div className="flex items-center font-semibold mb-2">
+  {t.name}
+  <Image 
+    src="https://res.cloudinary.com/dbdkg7fik/image/upload/v1747515030/Verified_ku5ljv.svg"
+    alt="Verified"
+    width={16}
+    height={16}
+    className="ml-2"
+  />
+
+  </div>
+  <p className="text-gray-600 text-sm">"{t.quote}"</p>
+</div>
+// ...existing code...
         ))}
       </div>
 
