@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { integralCF } from './font'
+import { satoshi } from './font'
 
 import Navbar from "./components/Navbar"; 
 import Footer from "./components/Foot";
@@ -24,7 +25,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${integralCF.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${integralCF.variable} ${satoshi.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navbar /> 
         {children}
         <Footer />

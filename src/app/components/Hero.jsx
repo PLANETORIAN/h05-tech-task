@@ -7,82 +7,88 @@ function Hero() {
 
         {/* Left Content */}
         <div className="flex-1 text-center md:text-left relative z-10">
-          <h1
-            className="
-              text-3xl          /* base, bigger text for mobile */
-              leading-tight
-              mb-4
-              font-integral
-              md:text-3xl       /* md same as base */
-              lg:text-4xl       /* 1024px+ bigger */
-              xl:text-5xl
-            "
-            style={{ fontFamily: 'var(--font-integral-cf)' }}
-          >
-            FIND CLOTHES<br />THAT MATCHES <br /> YOUR STYLE
-          </h1>
+        
 
-          <p
-            className="
-              text-sm           /* base paragraph smaller */
-              text-gray-600
-              font-integral
-              mb-6
-              max-w-xs          /* narrower on mobile */
-              mx-auto            /* center on mobile */
-              md:max-w-md
-              md:mx-0
-              md:text-sm        /* md paragraph */
-              lg:text-base
-              xl:text-lg
-            "
-          >
-            Browse through our diverse range of meticulously crafted garments,
-            designed to bring out your individuality and cater to your sense of style.
-          </p>
+<h1
+  className="
+    text-3xl
+    leading-tight
+    mb-4
+    font-integral
+    font-[700]        /* using heavy weight of IntegralCF */
+    md:text-3xl
+    lg:text-4xl
+    xl:text-5xl
+  "
+  style={{ fontFamily: 'var(--font-integral-cf)' }}
+>
+  FIND CLOTHES<br />THAT MATCHES <br /> YOUR STYLE
+</h1>
 
-          {/* Button */}
-          <button
-            className="
-              bg-black
-              text-white
-              rounded-full
-              font-medium
-              px-6 py-3        /* bigger padding for mobile */
-              text-base        /* bigger font for mobile */
-              block
-              w-full           /* full width button */
-              mx-auto          /* center */
-              md:inline-block
-              md:w-auto
-              md:px-4 md:py-1.5
-              md:text-[12px]
-              lg:px-6 lg:py-2
-              lg:text-base
-            "
-          >
-            Shop Now
-          </button>
+<p
+  className="
+    text-sm           /* base paragraph smaller */
+    text-gray-600
+    font-satoshi      /* changed to Satoshi */
+    mb-6
+    max-w-xs          /* narrower on mobile */
+    mx-auto           /* center on mobile */
+    md:max-w-md
+    md:mx-0
+    md:text-sm        /* md paragraph */
+    lg:text-base
+    xl:text-lg
+  "
+>
+  Browse through our diverse range of meticulously crafted garments,
+  designed to bring out your individuality and cater to your sense of style.
+</p>
 
-          {/* Metrics */}
-          <div
+{/* Button - updated to Satoshi */}
+<button
+  className="
+    bg-black
+    text-white
+    rounded-full
+    font-satoshi      /* changed to Satoshi */
+    font-medium
+    px-6 py-3
+    text-base
+    block
+    w-full
+    mx-auto
+    md:inline-block
+    md:w-auto
+    md:px-4 md:py-1.5
+    md:text-[12px]
+    lg:px-6 lg:py-2
+    lg:text-base
+  "
+>
+  Shop Now
+</button>
+
+{/* Metrics - updated to Satoshi */}
+<div
   className="
     flex
     flex-wrap md:flex-nowrap
     flex-row
     items-center
-    justify-center md:justify-start     /* Center on mobile, left-align on md+ */
+    justify-center md:justify-start
     mt-8
     gap-4
     text-[12px]
+    font-satoshi      /* changed to Satoshi */
     divide-x md:divide-y-0
     md:divide-x
     divide-gray-300
-    text-center md:text-left           /* Center text on mobile, left on md+ */
+    text-center md:text-left
   "
 >
+
   <div className="pr-4 py-2 md:py-0">
-    <p className="font-bold text-[18px] sm:text-[14px] md:text-[16px] lg:text-[18px]">
+    <p className="font-bold text-[28px] sm:text-[24px] md:text-[26px] lg:text-[28px]">
       200+
     </p>
     <p className="text-gray-500 text-[12px] sm:text-[10px] md:text-[12px] lg:text-[14px]">
@@ -91,7 +97,7 @@ function Hero() {
   </div>
 
   <div className="pr-4 py-2 md:py-0">
-    <p className="font-bold text-[18px] sm:text-[14px] md:text-[16px] lg:text-[18px]">
+    <p className="font-bold text-[28px] sm:text-[24px] md:text-[26px] lg:text-[28px]">
       2,000+
     </p>
     <p className="text-gray-500 text-[12px] sm:text-[10px] md:text-[12px] lg:text-[14px]">
@@ -100,7 +106,7 @@ function Hero() {
   </div>
 
   <div className="pr-4 py-2 md:py-0">
-    <p className="font-bold text-[18px] sm:text-[14px] md:text-[16px] lg:text-[18px]">
+    <p className="font-bold text-[28px] sm:text-[24px] md:text-[26px] lg:text-[28px]">
       30,000+
     </p>
     <p className="text-gray-500 text-[12px] sm:text-[10px] md:text-[12px] lg:text-[14px]">
